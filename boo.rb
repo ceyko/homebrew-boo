@@ -28,12 +28,13 @@ class Boo < Formula
       (libexec+'bin').install Dir['boo.*','booc.*','booi.*','booish.*']
     end
 
-    # install docs
+    # install docs, extras
     doc.install Dir['docs/*']
     (doc+'examples').install Dir['examples/*']
+    prefix.install 'extras'
   end
 
   def test
-    system "#{bin}/boo", "-help"
+    system "#{bin}/booi", "/dev/null"
   end
 end
