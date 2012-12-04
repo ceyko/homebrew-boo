@@ -35,4 +35,8 @@ class Mono < Formula
     system "make"
     system "make install"
   end
+
+  def test
+    system "#{bin}/mono", "--version"
+  end
 end
